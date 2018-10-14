@@ -1,0 +1,6 @@
+framework module Pods_ProjectDBUITests {
+  umbrella header "Pods-ProjectDBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
