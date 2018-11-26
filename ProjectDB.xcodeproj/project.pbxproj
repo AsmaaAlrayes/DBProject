@@ -18,8 +18,12 @@
 		6C642B652172111100530CDE /* ProjectDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C642B642172111100530CDE /* ProjectDBUITests.swift */; };
 		6C642B742172113C00530CDE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C642B722172113B00530CDE /* BaseViewController.swift */; };
 		6C642B752172113C00530CDE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C642B732172113B00530CDE /* MenuViewController.swift */; };
-		6C642B772172357800530CDE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C642B762172357800530CDE /* GoogleService-Info.plist */; };
-		6C642B7921724DEE00530CDE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C642B7821724DEE00530CDE /* SignupViewController.swift */; };
+		6C6BCEBB21A1E95B00CF68C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C6BCEBA21A1E95B00CF68C7 /* GoogleService-Info.plist */; };
+		6C6CB5BC21A1FD6600C8E43A /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6CB5BB21A1FD6600C8E43A /* RegViewController.swift */; };
+		6CA3C5A021A48F7700323FDE /* locationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA3C59F21A48F7700323FDE /* locationViewController.swift */; };
+		6CA3C5A221A49C7600323FDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA3C5A121A49C7600323FDE /* HomeViewController.swift */; };
+		6CA3C5A421A599D900323FDE /* dishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA3C5A321A599D900323FDE /* dishesViewController.swift */; };
+		6CB9313B21A44287004BF45D /* RestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB9313A21A44286004BF45D /* RestViewController.swift */; };
 		8A4B71162944009D22AAB1A9 /* Pods_ProjectDBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFA3EB7210207C14A586013 /* Pods_ProjectDBUITests.framework */; };
 		A62F5249870D2A6AE1E61138 /* Pods_ProjectDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9B53D8E41D482B06B0700C /* Pods_ProjectDBTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,8 +65,12 @@
 		6C642B662172111100530CDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C642B722172113B00530CDE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6C642B732172113B00530CDE /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		6C642B762172357800530CDE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6C642B7821724DEE00530CDE /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6C6BCEBA21A1E95B00CF68C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C6CB5BB21A1FD6600C8E43A /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		6CA3C59F21A48F7700323FDE /* locationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationViewController.swift; sourceTree = "<group>"; };
+		6CA3C5A121A49C7600323FDE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6CA3C5A321A599D900323FDE /* dishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dishesViewController.swift; sourceTree = "<group>"; };
+		6CB9313A21A44286004BF45D /* RestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestViewController.swift; sourceTree = "<group>"; };
 		76BF132D0B2042F1D5B96D34 /* Pods-ProjectDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDB/Pods-ProjectDB.release.xcconfig"; sourceTree = "<group>"; };
 		7BFA3EB7210207C14A586013 /* Pods_ProjectDBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectDBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7E2BC9B5D1B6F0CB3F4486 /* Pods-ProjectDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectDB/Pods-ProjectDB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,14 +158,18 @@
 				6C642B722172113B00530CDE /* BaseViewController.swift */,
 				6C642B732172113B00530CDE /* MenuViewController.swift */,
 				6C642B412172110D00530CDE /* AppDelegate.swift */,
-				6C642B762172357800530CDE /* GoogleService-Info.plist */,
+				6C6BCEBA21A1E95B00CF68C7 /* GoogleService-Info.plist */,
 				6C642B432172110D00530CDE /* ViewController.swift */,
 				6C642B452172110D00530CDE /* Main.storyboard */,
-				6C642B7821724DEE00530CDE /* SignupViewController.swift */,
 				6C642B4B2172111000530CDE /* Assets.xcassets */,
 				6C642B4D2172111000530CDE /* LaunchScreen.storyboard */,
 				6C642B502172111000530CDE /* Info.plist */,
 				6C642B482172110D00530CDE /* ProjectDB.xcdatamodeld */,
+				6C6CB5BB21A1FD6600C8E43A /* RegViewController.swift */,
+				6CB9313A21A44286004BF45D /* RestViewController.swift */,
+				6CA3C59F21A48F7700323FDE /* locationViewController.swift */,
+				6CA3C5A121A49C7600323FDE /* HomeViewController.swift */,
+				6CA3C5A321A599D900323FDE /* dishesViewController.swift */,
 			);
 			path = ProjectDB;
 			sourceTree = "<group>";
@@ -192,7 +204,6 @@
 				6C642B3B2172110D00530CDE /* Frameworks */,
 				6C642B3C2172110D00530CDE /* Resources */,
 				11C9F4555DCB2EEB8DB618DC /* [CP] Embed Pods Frameworks */,
-				593D2AEFF267AE0478C0A67B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C642B4F2172111000530CDE /* LaunchScreen.storyboard in Resources */,
-				6C642B772172357800530CDE /* GoogleService-Info.plist in Resources */,
+				6C6BCEBB21A1E95B00CF68C7 /* GoogleService-Info.plist in Resources */,
 				6C642B4C2172111000530CDE /* Assets.xcassets in Resources */,
 				6C642B472172110D00530CDE /* Main.storyboard in Resources */,
 			);
@@ -322,13 +333,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDB/Pods-ProjectDB-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -336,13 +342,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -371,42 +372,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		593D2AEFF267AE0478C0A67B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDB/Pods-ProjectDB-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectDB/Pods-ProjectDB-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A251A3A6121D216E0AED7E71 /* [CP] Check Pods Manifest.lock */ = {
@@ -460,12 +425,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C642B7921724DEE00530CDE /* SignupViewController.swift in Sources */,
+				6CA3C5A421A599D900323FDE /* dishesViewController.swift in Sources */,
 				6C642B442172110D00530CDE /* ViewController.swift in Sources */,
+				6C6CB5BC21A1FD6600C8E43A /* RegViewController.swift in Sources */,
 				6C642B752172113C00530CDE /* MenuViewController.swift in Sources */,
 				6C642B742172113C00530CDE /* BaseViewController.swift in Sources */,
+				6CB9313B21A44287004BF45D /* RestViewController.swift in Sources */,
+				6CA3C5A221A49C7600323FDE /* HomeViewController.swift in Sources */,
 				6C642B422172110D00530CDE /* AppDelegate.swift in Sources */,
 				6C642B4A2172110D00530CDE /* ProjectDB.xcdatamodeld in Sources */,
+				6CA3C5A021A48F7700323FDE /* locationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,10 +31,15 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             break
         case 1:
+            print("Location\n", terminator: "")
+            
+            self.openViewControllerBasedOnIdentifier("Location")
+            break
+        case 2:
             print("Play\n", terminator: "")
             
             self.openViewControllerBasedOnIdentifier("PlayVC")
-        case 2:
+        case 3:
             print("Sign in\n", terminator: "")
             
             self.openViewControllerBasedOnIdentifier("Sign")

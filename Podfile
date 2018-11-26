@@ -16,7 +16,9 @@ target 'ProjectDB' do
     inherit! :search_paths
     # Pods for testing
   end
-pod 'Firebase/Core'
-pod 'FirebaseUI'
-pod 'Firebase/Auth'
+  
+ pod 'Firebase/Core'
+ pod 'Firebase/Auth'
+ pod 'Firebase/Database'
+
 end
