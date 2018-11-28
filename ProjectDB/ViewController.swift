@@ -166,6 +166,7 @@ class ViewController: BaseViewController {
             }
         }
     }
+    
     func signup(){
         if self.email.text == "" || self.pass.text == "" {
             print("Please ENTER TEXT")

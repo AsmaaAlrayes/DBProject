@@ -53,6 +53,7 @@ class RestViewController: ViewController, UITableViewDataSource, UITableViewDele
             
             cell.textLabel?.text = name as! String
             
+            
            
             //var imageName = UIImage(named: "Rest")
             //cell.imageView?.image = imageName
