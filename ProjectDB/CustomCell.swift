@@ -12,10 +12,12 @@ import UIKit
 class CustomCell: UITableViewCell {
     var message : String?
     var mainimage : UIImage?
+    var location : String?
     
     var messageView : UITextView = {
         var textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = UIColor.red
         return textView
     }()
     
@@ -25,10 +27,18 @@ class CustomCell: UITableViewCell {
         return imageView
     }()
     
+    var locationView : UITextView = {
+        var textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = UIColor.blue
+        return textView
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(mainimageVIew)
         self.addSubview(messageView)
+        self.addSubview(locationView)
         
         mainimageVIew.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         mainimageVIew.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -40,6 +50,23 @@ class CustomCell: UITableViewCell {
         messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         messageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
+//        locationView.leftAnchor.constraint(equalTo: self.mainimageVIew.rightAnchor).isActive = true
+//        locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//        locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        locationView.topAnchor.constraint(equalTo: self.messageView.topAnchor).isActive = true
+        
+//        locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+//        locationView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//
+        
+        locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        locationView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        locationView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        
+        
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -48,6 +75,9 @@ class CustomCell: UITableViewCell {
         }
         if let image = mainimage {
             mainimageVIew.image = image
+        }
+        if let location = location {
+            locationView.text = location
         }
     }
     
