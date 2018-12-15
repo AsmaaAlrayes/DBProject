@@ -50,19 +50,10 @@ class CustomCell: UITableViewCell {
         messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         messageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         
-//        locationView.leftAnchor.constraint(equalTo: self.mainimageVIew.rightAnchor).isActive = true
-//        locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//        locationView.topAnchor.constraint(equalTo: self.messageView.topAnchor).isActive = true
-        
-//        locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        locationView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//
-        
         locationView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         locationView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        locationView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         locationView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         
         

@@ -16,49 +16,49 @@ struct CellData {
 class TESTRestViewController: UITableViewController {
     var data = [CellData]()
     var array = ["asmaa"]
+    var nnn = "asas"
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //#imageLiteral(resourceName: "Rest")
-         //"#imageLiteral(resourceName: "" + 1+ "")"
-        //data = [CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT"),CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT")]
+         data = []
+       // data = [CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT"),CellData.init(image: #imageLiteral(resourceName: "Rest"), message: nnn, location: "KWT")]
         
+        self.tableView.estimatedRowHeight = 500
         
         //------Database----------------------------------------------------------------------------------
         let ref = Database.database().reference()
         //1st
         ref.child("rest").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
-            
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
+            let location = value?["location"] as? String ?? ""
             
-            print(name)
-            // print(self.array)
-       
-            self.array.append(name)
-            print(self.array)
+            self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
+     
+        })
+        
+        //2st
+        ref.child("rest").child("2").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["name"] as? String ?? ""
+            let location = value?["location"] as? String ?? ""
             
-           // self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT"))
-            //cell.textLabel?.text = name as! String
+            self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
+           
+        })
+
+        //one
+        ref.child("rest").child("one").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["name"] as? String ?? ""
+            let location = value?["location"] as? String ?? ""
             
-            //image
-            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/dbtest-2-cba93.appspot.com/o/" + name + ".jpg?alt=media&token=7e158ef5-292a-4c5f-8243-561b923c73d6")
-            
-            let data = try? Data(contentsOf: url!)
-            
-            if let imageData = data {
-                let image = UIImage(data: imageData)
-                //cell.imageView?.image = image
-            }
-            
-            
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+            self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
+            self.tableView.reloadData()
+        })
     //-------------------------------------------------------------------------------------------------
-        // print("------")
-        print(self.array)
+       
          self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,8 +70,8 @@ class TESTRestViewController: UITableViewController {
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
 }
