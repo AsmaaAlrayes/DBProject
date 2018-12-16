@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomCell: UITableViewCell {
+class dishesCustomCell: UITableViewCell {
     var message : String?
     var mainimage : UIImage?
     var location : String?
@@ -57,6 +57,7 @@ class CustomCell: UITableViewCell {
         locationView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         //locationView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
         locationView.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        
         
         
         

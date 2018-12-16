@@ -10,101 +10,78 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+struct dishesCellData {
+    let image : UIImage?
+    let message : String?
+    let location : String?
+}
 
 class TESTdishesTableViewController: UITableViewController {
-
+    var data = [dishesCellData]()
+    var array = ["asmaa"]
+    var nnn = "asas"
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //------Database-------------------------------------------------------------------------
+        
+        //#imageLiteral(resourceName: "Rest")
+        data = []
+        // data = [CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT"),CellData.init(image: #imageLiteral(resourceName: "Rest"), message: nnn, location: "KWT")]
+        
+        self.tableView.estimatedRowHeight = 500
+        
+        //------Database----------------------------------------------------------------------------------
         let ref = Database.database().reference()
         //1st
-       let r = row+1
-        
-        ref.child("rest").child(String(r)).child("dishes").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+       ref.child("rest").child(String(row+1)).child("dishes").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
-            let price = value?["price"] as? String ?? ""
+            var location = value?["price"] as? String ?? ""
+            location = location + " KD"
+        print(row)
+        print(name)
+        print(location)
+             self.data.append(dishesCellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
+            self.tableView.reloadData()
             
-            print(name)
-            print(price)
+//            //image-------
+//            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/dbtest-2-cba93.appspot.com/o/" + name + ".jpg?alt=media&token=7e158ef5-292a-4c5f-8243-561b923c73d6")
+//
+//            let data = try? Data(contentsOf: url!)
+//
+//            if let imageData = data {
+//                let image1 = UIImage(data: imageData)
+//                self.data.append(dishesCellData.init(image: image1, message: name, location: location))
+//            }
+            
         })
         
+
+        //-------------------------------------------------------------------------------------------------
         
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.register(dishesCustomCell.self, forCellReuseIdentifier: "custom")
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! dishesCustomCell
+        
+        cell.mainimage = data[indexPath.row].image
+        cell.message = data[indexPath.row].message
+        cell.location = data[indexPath.row].location
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("*********************")
+        print("pressed")
+        row = indexPath.row
+        
+        
+        //if cell pressed
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let destination = storyboard.instantiateViewController(withIdentifier: "TdishesVC") as! TESTdishesTableViewController
+//        navigationController?.pushViewController(destination, animated: true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

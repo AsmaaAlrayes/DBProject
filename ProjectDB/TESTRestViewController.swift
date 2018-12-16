@@ -15,6 +15,8 @@ struct CellData {
 }
 var row = 0
 
+var refresher: UIRefreshControl!
+
 class TESTRestViewController: UITableViewController {
     var data = [CellData]()
     var array = ["asmaa"]
@@ -24,8 +26,7 @@ class TESTRestViewController: UITableViewController {
         
         //#imageLiteral(resourceName: "Rest")
          data = []
-       // data = [CellData.init(image: #imageLiteral(resourceName: "Rest"), message: "helloooo asmaaaa", location: "KWT"),CellData.init(image: #imageLiteral(resourceName: "Rest"), message: nnn, location: "KWT")]
-        
+
         self.tableView.estimatedRowHeight = 500
         
         //------Database----------------------------------------------------------------------------------
@@ -67,7 +68,7 @@ class TESTRestViewController: UITableViewController {
         })
 
         //one
-        ref.child("rest").child("one").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("rest").child("3").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
             let location = value?["location"] as? String ?? ""

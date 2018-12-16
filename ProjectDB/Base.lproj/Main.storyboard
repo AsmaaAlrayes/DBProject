@@ -37,7 +37,6 @@
                         <constraints>
                             <constraint firstItem="BfN-R2-ccX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1wj-3w-X9S"/>
                             <constraint firstItem="BfN-R2-ccX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5i2-h0-9V2"/>
-                            <constraint firstItem="BfN-R2-ccX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="7vn-Yk-xII"/>
                             <constraint firstItem="BfN-R2-ccX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EA8-db-YKE"/>
                             <constraint firstItem="BfN-R2-ccX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="FF6-6u-iOE"/>
                             <constraint firstItem="BfN-R2-ccX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ga6-6g-kHe"/>
