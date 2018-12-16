@@ -18,6 +18,7 @@ class CustomCell: UITableViewCell {
         var textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = UIColor.red
+        textView.isUserInteractionEnabled = false
         return textView
     }()
     
@@ -31,6 +32,7 @@ class CustomCell: UITableViewCell {
         var textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = UIColor.blue
+        textView.isUserInteractionEnabled = false
         return textView
     }()
     

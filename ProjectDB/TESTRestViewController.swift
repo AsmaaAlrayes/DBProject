@@ -13,6 +13,8 @@ struct CellData {
     let message : String?
     let location : String?
 }
+var row = 0
+
 class TESTRestViewController: UITableViewController {
     var data = [CellData]()
     var array = ["asmaa"]
@@ -34,8 +36,16 @@ class TESTRestViewController: UITableViewController {
             let name = value?["name"] as? String ?? ""
             let location = value?["location"] as? String ?? ""
             
-            self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
-     
+            //image-------
+            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/dbtest-2-cba93.appspot.com/o/" + name + ".jpg?alt=media&token=7e158ef5-292a-4c5f-8243-561b923c73d6")
+            
+            let data = try? Data(contentsOf: url!)
+            
+            if let imageData = data {
+                let image1 = UIImage(data: imageData)
+                self.data.append(CellData.init(image: image1, message: name, location: location))
+            }
+            
         })
         
         //2st
@@ -44,8 +54,16 @@ class TESTRestViewController: UITableViewController {
             let name = value?["name"] as? String ?? ""
             let location = value?["location"] as? String ?? ""
             
-            self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
-           
+//            //image-------
+//            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/dbtest-2-cba93.appspot.com/o/" + name + ".jpg?alt=media&token=7e158ef5-292a-4c5f-8243-561b923c73d6")
+//
+//            let data = try? Data(contentsOf: url!)
+//
+//            if let imageData = data {
+//                let image1 = UIImage(data: imageData)
+//                self.data.append(CellData.init(image: image1, message: name, location: location))
+//            }
+           self.data.append(CellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
         })
 
         //one
@@ -73,5 +91,10 @@ class TESTRestViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("*********************")
+        print("pressed")
+        row = indexPath.row
     }
 }
