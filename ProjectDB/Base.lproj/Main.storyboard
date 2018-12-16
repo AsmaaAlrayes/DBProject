@@ -230,7 +230,7 @@
         <!--Tdishes Table View Controller-->
         <scene sceneID="sCh-Xq-8WD">
             <objects>
-                <tableViewController id="3Ny-xo-zOH" customClass="TESTdishesTableViewController" customModule="ProjectDB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TdishesVC" id="3Ny-xo-zOH" customClass="TESTdishesTableViewController" customModule="ProjectDB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JJX-xO-B0P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

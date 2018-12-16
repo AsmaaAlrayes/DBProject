@@ -96,5 +96,9 @@ class TESTRestViewController: UITableViewController {
         print("*********************")
         print("pressed")
         row = indexPath.row
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destination = storyboard.instantiateViewController(withIdentifier: "TdishesVC") as! TESTdishesTableViewController
+        navigationController?.pushViewController(destination, animated: true)
     }
 }
