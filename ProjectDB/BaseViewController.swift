@@ -40,15 +40,17 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             self.openViewControllerBasedOnIdentifier("PlayVC")
         case 3:
+            print("Cart\n", terminator: "")
+            
+            self.openViewControllerBasedOnIdentifier("checkout")
+            
+            break
+        case 4:
             print("Sign in\n", terminator: "")
             
             self.openViewControllerBasedOnIdentifier("Sign")
             break
-        case 4:
-            print("Cart\n", terminator: "")
-            
-            self.openViewControllerBasedOnIdentifier("checkout")
-            break
+        
         default:
             print("default\n", terminator: "")
         }

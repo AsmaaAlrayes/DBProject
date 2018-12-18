@@ -59,9 +59,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         arrayMenuOptions.append(["title":"Home", "icon":"Home"])
         arrayMenuOptions.append(["title":"location", "icon":"location"])
         arrayMenuOptions.append(["title":"Restaurants", "icon":"Rest"])
-        arrayMenuOptions.append(["title":"Sign in", "icon":"Sign"])
         arrayMenuOptions.append(["title":"Cart", "icon":"Cart"])
-        
+        if signedsuccess == 0{
+            arrayMenuOptions.append(["title":"Sign in", "icon":"Sign"])
+        }
         //arrayMenuOptions.remo
         tblMenuOptions.reloadData()
     }

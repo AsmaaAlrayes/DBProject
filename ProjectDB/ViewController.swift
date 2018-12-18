@@ -15,6 +15,7 @@ import FirebaseDatabase
 //touchID
 import LocalAuthentication
 
+var signedsuccess = 0
 class ViewController: BaseViewController {
     
     @IBOutlet weak var seg: UISegmentedControl!
@@ -179,6 +180,7 @@ class ViewController: BaseViewController {
                 if error == nil {
                     print("you have successfully logen in")
                     self.performSegue(withIdentifier: "gotohome", sender: self)
+                    signedsuccess = 1
                 } else{
                     print("error")
                 }

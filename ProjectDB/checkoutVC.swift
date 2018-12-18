@@ -17,12 +17,11 @@ struct checkoutCellData {
     let location : String?
 }
 
-
+var priceString = 0.0
 class checkoutVC: UITableViewController {
     var data = [checkoutCellData]()
     var array = ["asmaa"]
     var nnn = "asas"
-    
     
     
     override func viewDidLoad() {
@@ -37,26 +36,24 @@ class checkoutVC: UITableViewController {
         print("88888888")
         //print(shoppingCart[0])
         
-        print(shoppingCart.count)
-        print(shoppingCart[0].name)
+//        print(shoppingCart.count)
+//        print(shoppingCart[0].name)
         
         //***********
         //------print to table----------------------------------------------------------------------------------
       
         // iterate over all keys
-        for key in 0...(shoppingCart.count-1){
-            print(key)
-            self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: shoppingCart[key].name, location: shoppingCart[key].price))
+        if shoppingCart.count != 0 {
+            for key in 0...(shoppingCart.count-1){
+                print(key)
+                priceString = priceString + (shoppingCart[key].price as NSString).doubleValue
+                self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: shoppingCart[key].name, location: shoppingCart[key].price))
+                
+            }
+            self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: "", location: ""))
             
+            self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: "The Total is  ", location: String(priceString)+" KD"))
         }
-        
-//        for (key, value) in shoppingCart {
-//
-//            self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: shoppingCart[key].name, location: shoppingCart[key].price))
-//
-//        }
-        
-        //self.data.append(checkoutCellData.init(image: #imageLiteral(resourceName: "Rest"), message: shoppingCart[0].name, location: shoppingCart[0].price))
         self.tableView.reloadData()
         
         //-------------------------------------------------------------------------------------------------
