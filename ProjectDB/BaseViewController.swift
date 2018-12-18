@@ -44,6 +44,11 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             
             self.openViewControllerBasedOnIdentifier("Sign")
             break
+        case 4:
+            print("Cart\n", terminator: "")
+            
+            self.openViewControllerBasedOnIdentifier("checkout")
+            break
         default:
             print("default\n", terminator: "")
         }

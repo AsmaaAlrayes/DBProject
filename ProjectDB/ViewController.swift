@@ -12,6 +12,9 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
+//touchID
+import LocalAuthentication
+
 class ViewController: BaseViewController {
     
     @IBOutlet weak var seg: UISegmentedControl!
@@ -21,6 +24,22 @@ class ViewController: BaseViewController {
     @IBOutlet weak var btn: UIButton!
     
     
+//    @IBAction func touchID(_ sender: Any) {
+//        let context:LAContext = LAContext()
+//        
+//        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+//        {
+//            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Use Touch ID to Log In", reply: {(wasCorrect, error) in
+//                if wasCorrect{
+//                    print("Correct")}
+//                else{
+//                    print("Incorrect")}
+//            })
+//        }
+//        else{
+//            
+//        }
+//    }
     
     @IBAction func btn_clicked(_ sender: Any) {
         if seg.selectedSegmentIndex == 0 {

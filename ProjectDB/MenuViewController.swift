@@ -60,6 +60,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         arrayMenuOptions.append(["title":"location", "icon":"location"])
         arrayMenuOptions.append(["title":"Restaurants", "icon":"Rest"])
         arrayMenuOptions.append(["title":"Sign in", "icon":"Sign"])
+        arrayMenuOptions.append(["title":"Cart", "icon":"Cart"])
         
         //arrayMenuOptions.remo
         tblMenuOptions.reloadData()

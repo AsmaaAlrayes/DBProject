@@ -10,16 +10,27 @@
 import Foundation
 import UIKit
 import FirebaseDatabase
+
 struct dishesCellData {
     let image : UIImage?
     let message : String?
     let location : String?
 }
+//var shoppingCart = [String]()
+//var shoppingCart: [String: String] = [:]
+//var shoppingCart = [(String, String)]()
 
+var shoppingCart:[(name: String, price: String)] = []
+//var shoppingCart:[Any]
+
+var nameofrest = ""
 class TESTdishesTableViewController: UITableViewController {
     var data = [dishesCellData]()
     var array = ["asmaa"]
     var nnn = "asas"
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,26 +43,18 @@ class TESTdishesTableViewController: UITableViewController {
         //------Database----------------------------------------------------------------------------------
         let ref = Database.database().reference()
         //1st
-       ref.child("rest").child(String(row+1)).child("dishes").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+       ref.child("rest").child(String(rowinrest+1)).child("dishes").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
             var location = value?["price"] as? String ?? ""
             location = location + " KD"
-        print(row)
+        print(rowinrest)
         print(name)
         print(location)
              self.data.append(dishesCellData.init(image: #imageLiteral(resourceName: "Rest"), message: name, location: location))
             self.tableView.reloadData()
             
-//            //image-------
-//            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/dbtest-2-cba93.appspot.com/o/" + name + ".jpg?alt=media&token=7e158ef5-292a-4c5f-8243-561b923c73d6")
-//
-//            let data = try? Data(contentsOf: url!)
-//
-//            if let imageData = data {
-//                let image1 = UIImage(data: imageData)
-//                self.data.append(dishesCellData.init(image: image1, message: name, location: location))
-//            }
+
             
         })
         
@@ -76,12 +79,65 @@ class TESTdishesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("*********************")
         print("pressed")
-        row = indexPath.row
+        //row = indexPath.row
         
         
         //if cell pressed
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let destination = storyboard.instantiateViewController(withIdentifier: "TdishesVC") as! TESTdishesTableViewController
-//        navigationController?.pushViewController(destination, animated: true)
+        //=================
+        
+        
+        //shoppingCart.append(data[indexPath.row].message!);
+        
+        //shoppingCart.append(data[indexPath.row].message!);
+        var alican = (name: data[indexPath.row].message!, data[indexPath.row].location!)
+        shoppingCart.append(alican)
+        
+        //shoppingCart.append((data[indexPath.row].message!, data[indexPath.row].location!))
+       
+        
+        //print (shoppingCart)
+        print (shoppingCart, separator: ", ", terminator: ".")
+        
+        
+        
+        
+        //Show alert message (to go to cart, or continue adding meals)
+        
+        let alert = UIAlertController(title: "Proceed to Order", message: "Go to Shopping Cart", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue Adding Food", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+        
+        //now I need to add a new view controller which I will display the products passed from shoppingCartArray
+        //then create a connection from dishes view to the new view controller "Checkout"
+        //I had also created a new cacao touc swift file with checkoutVC
+        
+        
+        //this is the function for yes which will go to another view controller (checkout)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let destination = storyboard.instantiateViewController(withIdentifier: "checkout") as! checkoutVC
+            self.navigationController?.pushViewController(destination, animated: true)
+            
+            
+            //I still need to pass the data as well (pass the array shoppingCart to be printed
+            
+        }))
+
     }
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//        
+//        //------Database----------------------------------------------------------------------------------
+//        let ref = Database.database().reference()
+//        //1st
+//        ref.child("rest").child(String(rowinrest+1)).observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            nameofrest = value?["name"] as? String ?? ""
+//            
+//            
+//        })
+//        
+//        return nameofrest
+//    }
 }

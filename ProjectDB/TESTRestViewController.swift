@@ -13,7 +13,7 @@ struct CellData {
     let message : String?
     let location : String?
 }
-var row = 0
+var rowinrest = 0
 
 var refresher: UIRefreshControl!
 
@@ -96,10 +96,13 @@ class TESTRestViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("*********************")
         print("pressed")
-        row = indexPath.row
+        rowinrest = indexPath.row
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "TdishesVC") as! TESTdishesTableViewController
         navigationController?.pushViewController(destination, animated: true)
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Restaurants"
     }
 }
